@@ -28,7 +28,7 @@ You can install the module with composer (recommended) or manually.
 #### Step 1
 ##### Using Composer (recommended)
 ```
-    LOOKUP HOW TO DO THAT
+    composer require rookiesoft/magento2-customertags
 ```
 
 ##### Manually  (not recommended)
@@ -40,7 +40,7 @@ You can install the module with composer (recommended) or manually.
 #### Step 2
 cd to {Magento 2 root}
 ```
-    LOOKUP HOW TO ENABLE MODULE
+    php -f bin/magento module:enable --clear-static-content RookieSoft_CustomerTags
     bin/magento setup:upgrade
 ```
 
