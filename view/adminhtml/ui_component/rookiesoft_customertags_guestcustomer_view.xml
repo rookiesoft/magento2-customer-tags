@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Ui/etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">rookiesoft_customertags_guestcustomer_view.rookiesoft_customertags_guestcustomer_view_data_source</item>
+            <item name="deps" xsi:type="string">rookiesoft_customertags_guestcustomer_view.rookiesoft_customertags_guestcustomer_view_data_source</item>
+        </item>
+        <item name="spinner" xsi:type="string">view_columns</item>
+    </argument>
+    <dataSource name="rookiesoft_customertags_guestcustomer_view_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">RookieSoft\CustomerTags\Helper\UiComponent\DataProvider\View</argument>
+            <argument name="name" xsi:type="string">rookiesoft_customertags_guestcustomer_view_data_source</argument>
+            <argument name="primaryFieldName" xsi:type="string">id</argument>
+            <argument name="requestFieldName" xsi:type="string">entity_id</argument>
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="update_url" xsi:type="url" path="mui/index/render"/>
+                    <item name="filter_url_params" xsi:type="array">
+                        <item name="entity_id" xsi:type="string">*</item>
+                    </item>
+                </item>
+            </argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="component" xsi:type="string">Magento_Ui/js/grid/provider</item>
+            </item>
+        </argument>
+    </dataSource>
+    <columns name="view_columns">
+        <column name="increment_id">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string" translate="true">Order ID</item>
+                </item>
+            </argument>
+        </column>
+        <actionsColumn name="actions" class="RookieSoft\CustomerTags\Ui\Component\Listing\GuestCustomer\Column\ActionView">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="sortOrder" xsi:type="number">70</item>
+                    <item name="viewUrlPath" xsi:type="string">sales/order/view</item>
+                    <item name="urlEntityParamName" xsi:type="string">order_id</item>
+                </item>
+            </argument>
+            <settings>
+                <indexField>entity_id</indexField>
+            </settings>
+       </actionsColumn>
+    </columns>
+
+</listing>

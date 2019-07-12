@@ -1,0 +1,38 @@
+<?php
+
+// namespace RookieSoft\CustomerTags\Model;
+
+// use \Magento\Ui\DataProvider\AbstractDataProvider;
+
+// class CategoriesDataProvider extends AbstractDataProvider
+// {
+//     public function __construct (
+//         \Magento\Framework\App\RequestInterface $request
+//     ) {
+//         $this->_request = $request;
+//     }
+
+//     public function getData()
+//     {
+//         if (isset($this->loadedData)) {
+//             return $this->loadedData;
+//         }
+
+//         $tagCode = $this->_request->getParam('tag_code');
+
+//         if (!empty($tagCode) ) {
+//             $items = $this->collection->getItems();
+//             foreach ($items as $item) {
+//                 $this->loadedData[$item->getTagCode()] = $item->getData();
+//             }
+
+//             $data = $this->dataPersistor->get('form_item');
+
+//             if (!empty($data)) {
+//                 //Do something
+//                 $this->loadedData[$item->getTagCode()] = $item->getData();
+//             } 
+//             return $this->loadedData;
+//         }
+//     }
+}

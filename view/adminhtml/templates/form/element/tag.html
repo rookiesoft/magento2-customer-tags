@@ -1,0 +1,32 @@
+<div class="tag">
+    <div class="admin__control-text">
+        <div class="apps-share-chips-editor">
+            <input class="admin__control-text" type="hidden"
+                   data-bind="
+        value: value,
+        valueUpdate: valueUpdate,
+        attr: {
+            name: inputName,
+            placeholder: placeholder,
+            'aria-describedby': noticeId,
+            id: uid,
+            disabled: disabled
+    }"/>
+            <span data-bind="foreach: { data: list, as: 'item' }">
+                <span class="field-tag-chip">
+                <div class="field-tag-content" data-bind="text: item"></div>
+                <div class="field-tag-close-before">
+                    <span class="field-tag-close" data-bind="event: {click: $parent.deleteTag.bind($parent, $index)}"></span>
+                </div>
+                </span>
+            </span>
+            <textarea
+                    class="field-tag-input" placeholder="Add more tags..." data-bind="
+        event: {change: userChanges, blur: OnBlurEvent},
+        hasFocus: focused,
+        valueUpdate: valueUpdate,
+        value: valueArea
+        "></textarea>
+        </div>
+    </div>
+</div>

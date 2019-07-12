@@ -1,0 +1,99 @@
+// define([
+//     'underscore',
+//     'mageUtils',
+//     'Magento_Ui/js/form/element/abstract',
+//     'ko',
+//     'Magento_Ui/js/lib/validation/validator'
+// ], function (_, utils, Element, ko, validator) {
+//     'use strict';
+
+//     return Element.extend({
+//         defaults: {
+//             list: ([]),
+//             valueUpdate: 'afterkeydown',
+//             listens: {
+//                 'valueArea': 'onUpdateArea'
+//             }
+//         },
+
+//         initialize: function () {
+//             this._super();
+//             this.on('value', this.onUpdateArea.bind(this));
+//             var self = this;
+//             var list = this.value().split(',');
+//             _.each(list, function (value, index) {
+//                 if (value.length > 0) {
+//                     self.list.push(value.trim());
+//                 }
+//             });
+
+//             return this;
+//         },
+
+//         initObservable: function () {
+//             this._super();
+//             this.observe(['valueArea']);
+//             this.observe('list', this.list);
+//             return this;
+//         },
+
+//         onUpdateArea: function (value) {
+//             if (value.length > 1) {
+//                 if (value.indexOf(',') !== -1 || value.indexOf(' ') !== -1) {
+//                     var newValue = value.slice(0, -1);
+//                     this.correctValue(newValue);
+//                 }
+//             }
+//         },
+
+//         correctValue: function (tag) {
+//             if (this.hasTag(tag)) {
+//                 this.valueArea('');
+//                 return false;
+//             }
+//             if (this.isValidTag(tag).passed) {
+//                 this.list.push(tag);
+//                 this.joinList(this.list());
+//                 this.valueArea('');
+//                 return true;
+//             }
+
+//             return false;
+//         },
+
+//         isValidTag: function (tag) {
+//             return validator('validate-alphanum', tag);
+//         },
+
+//         OnBlurEvent: function (object) {
+//             if (this.valueArea() && this.valueArea().length > 0) {
+//                 if (!this.correctValue(this.valueArea())) {
+//                     this.valueArea('');
+//                 }
+//             }
+//         },
+
+//         deleteTag: function (self, value, event) {
+//             event ? event.stopPropagation() : false;
+//             var key = -1;
+//             _.each(this.list(), function (element, index) {
+//                 if (value === element) {
+//                     key = index;
+//                 }
+//             });
+//             if (key > -1) {
+//                 this.list.splice(key, 1);
+//                 this.joinList(this.list());
+//                 this.valueArea('');
+//             }
+//         },
+
+//         joinList: function (array) {
+//             this.value(array.join(','));
+//         },
+
+//         hasTag: function (value) {
+//             return this.list().indexOf(value) !== -1;
+//         }
+//     });
+// });

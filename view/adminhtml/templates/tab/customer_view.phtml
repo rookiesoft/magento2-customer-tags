@@ -1,0 +1,21 @@
+<div class="fieldset-wrapper customer-information">
+    <div class="fieldset-wrapper-title">
+        <span class="title"><?php /* @escapeNotVerified */
+            echo __('Information for new Customer tab') ?></span>
+    </div>
+    <table class="admin__table-secondary">
+        <tbody>
+        <?php echo $block->getChildHtml(); ?>
+        <tr>
+            <th><?php /* @escapeNotVerified */
+                echo __('Customer ID:') ?></th>
+            <td><?php echo $block->getCustomerId(); ?></td>
+        </tr>
+        <tr>
+            <th><?php /* @escapeNotVerified */
+                echo __('Customer History:') ?></th>
+            <td><?php echo __('History of Customer display') ?></td>
+        </tr>
+        </tbody>
+    </table>
+</div>

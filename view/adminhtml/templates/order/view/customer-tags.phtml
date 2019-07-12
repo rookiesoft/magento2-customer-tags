@@ -1,0 +1,14 @@
+<?php
+/** @var $block RookieSoft\CustomerTags\Block\Adminhtml\Order\View\CustomerTags */
+?>
+<?php if (!empty($block->getTags($block->getEmailAdress()))): ?>
+    <tr>
+        <th>
+            <?= $block->escapeHtml(__('Tags')) ?>
+            (<a href="<?= $block->escapeHtml($block->getView($block->getEmailAdress())) ?>"><?= $block->escapeHtml(__('Edit')); ?></a>)
+        </th>
+        <td>
+            <?= $block->escapeHtml($block->getTags($block->getEmailAdress())) ?>
+        </td>
+    </tr>
+<?php endif; ?>

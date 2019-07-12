@@ -1,0 +1,61 @@
+<?php
+/**
+ * @var \RookieSoft\CustomerTags\Block\Adminhtml\GuestCustomer\View $block
+ */
+?>
+
+<section class="admin__page-section">
+    <div class="rookiesoft__page-section-title">
+        <span class="title"><?= $block->escapeHtml(__('Guest Customer Information')) ?></span>
+    </div>
+    <div class="admin__page-section-content">
+        <div class="admin__page-section-item rookiesoft-information">
+
+            <div class="admin__page-section-item-title">
+                <span class="title">
+                    <?= $block->escapeHtml(__('Information')) ?>
+                </span>
+            </div>
+            <div class="admin__page-section-item-content">
+                <table class="admin__table-secondary rookiesoft-account-information">
+                    <tr>
+                        <th><?= $block->escapeHtml(__('E-Mail')) ?></th>
+                        <td><?= $block->escapeHtml($block->getEmailAdress()) ?></td>
+                    </tr>
+                    <tr>
+                        <th><?= $block->escapeHtml(__('Purchases made')) ?></th>
+                        <td><?= $block->escapeHtml($block->sumOrders()) ?></td>
+                    </tr>
+                    <tr>
+                        <th><?= $block->escapeHtml(__('Tags')) ?></th>
+                        <td><?= $block->escapeHtml($block->getTags()) ?></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="admin__page-section-item rookiesoft-view-account-information">
+
+            <div class="admin__page-section-item-title">
+                <span class="title">
+                    <?= $block->escapeHtml(__(' ')) ?>
+                </span>
+            </div>
+            <div class="admin__page-section-item-content">
+                <table class="admin__table-secondary rookiesoft-account-information">
+                    <tr>
+                        <th><?= $block->escapeHtml(__(' ')) ?></th>
+                        <td><?= $block->escapeHtml($block->getEmail()) ?></td>
+                    </tr>
+                    <tr>
+                        <th><?= $block->escapeHtml(__('Sales')) ?></th>
+                        <td><?= $block->escapeHtml($block->getPrice()) ?></td>
+                    </tr>
+                    <tr>
+                        <th><?= $block->escapeHtml(__(' ')) ?></th>
+                        <td><?= $block->escapeHtml($block->getEmail()) ?></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</section>

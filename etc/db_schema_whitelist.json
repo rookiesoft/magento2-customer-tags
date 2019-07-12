@@ -1,0 +1,104 @@
+{
+    "rookiesoft_customertags_entity_tag": {
+        "column": {
+            "id": true,
+            "entity_id": true,
+            "entity_type_id": true,
+            "tag_code": true
+        },
+        "index": {
+            "ROOKIESOFT_CUSTOMERTAGS_ENTITY_TAG_ENTITY_ID": true,
+            "ROOKIESOFT_CUSTOMERTAGS_ENTITY_TAG_TAG_CODE": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "FK_A317E01C6BC31E75D58D658576197DC6": true,
+            "FK_AF55EE52DFFFE6A6D357B04591D960E7": true
+        }
+    },
+    "sales_order": {
+        "index": {
+            "SALES_ORDER_CUSTOMER_EMAIL": true
+        }
+    },
+    "rookiesoft_customertags_guest_customer": {
+        "column": {
+            "id": true,
+            "email": true,
+            "tag_code": true
+        },
+        "index": {
+            "ROOKIESOFT_CUSTOMERTAGS_GUEST_CUSTOMER_EMAIL": true,
+            "ROOKIESOFT_CUSTOMERTAGS_GUEST_CUSTOMER_TAG_CODE": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "ROOKIESOFT_CSTRTAGS_GUEST_CSTR_EMAIL_SALES_ORDER_CSTR_EMAIL": true,
+            "FK_CCE9E15B8D4A30905979E1156885644B": true,
+            "ROOKIESOFT_CUSTOMERTAGS_GUEST_CUSTOMER_EMAIL_TAG_CODE": true
+        }
+    },
+    "rookiesoft_customertags_tag": {
+        "column": {
+            "id": true,
+            "code": true,
+            "label": true,
+            "description": true,
+            "state": true
+        },
+        "index": {
+            "ROOKIESOFT_CUSTOMERTAGS_TAG_CODE": true,
+            "ROOKIESOFT_CUSTOMERTAGS_TAG_LABEL": true,
+            "ROOKIESOFT_CUSTOMERTAGS_TAG_STATE": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "rookiesoft_customertags_category": {
+        "column": {
+            "id": true,
+            "code": true,
+            "label": true,
+            "description": true
+        },
+        "index": {
+            "ROOKIESOFT_CUSTOMERTAGS_CATEGORY_CODE": true,
+            "ROOKIESOFT_CUSTOMERTAGS_CATEGORY_LABEL": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "rookiesoft_customertags_category_tag": {
+        "column": {
+            "id": true,
+            "category_code": true,
+            "tag_code": true
+        },
+        "index": {
+            "ROOKIESOFT_CUSTOMERTAGS_CATEGORY_TAG_CATEGORY_CODE": true,
+            "ROOKIESOFT_CUSTOMERTAGS_CATEGORY_TAG_TAG_CODE": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "FK_65CDD7BE89B77E4360C4ADB52E6F7943": true,
+            "FK_E12F53E07FE133D5C0075BC70EA0B5FE": true,
+            "ROOKIESOFT_CUSTOMERTAGS_CATEGORY_TAG_TAG_CODE_CATEGORY_CODE": true
+        }
+    },
+    "rookiesoft_customertags_entity_type": {
+        "column": {
+            "id": true,
+            "code": true,
+            "type_name": true
+        },
+        "index": {
+            "ROOKIESOFT_CUSTOMERTAGS_ENTITY_TYPE_CODE": true,
+            "ROOKIESOFT_CUSTOMERTAGS_ENTITY_TYPE_TYPE_NAME": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    }
+}

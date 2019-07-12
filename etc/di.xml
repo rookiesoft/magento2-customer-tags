@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <!-- <type name="Magento\Framework\View\Result\Page">
+        <arguments>
+            <argument name="template" xsi:type="string">rookiesoft_customertags::Guestview.phtml</argument>
+        </arguments>
+    </type> -->
+
+
+<!--     <virtualType name="RookieSoft\CustomerTags\Helper\UiComponent\DataProvider\View\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">sales_order</argument>
+            <argument name="resourceModel" xsi:type="string">RookieSoft\CustomerTags\Helper\UiComponent\DataProvider\View</argument>
+        </arguments>
+    </virtualType>-->
+    <!--<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="rookiesoft_customertags_guestcustomer_view_data_source" xsi:type="string">RookieSoft\CustomerTags\Helper\UiComponent\DataProvider\View</item>
+            </argument>
+        </arguments>
+    </type>-->
+    <type name="Magento\Customer\Ui\Component\DataProvider"> 
+        <arguments> 
+            <argument name="addFieldStrategies" xsi:type="array"> 
+                <item name="CustomerTags" xsi:type="object">RookieSoft\CustomerTags\Ui\DataProvider\Customer\CustomerTags</item> 
+            </argument> 
+            <argument name="addFilterStrategies" xsi:type="array"> 
+                <item name="CustomerTags" xsi:type="object">RookieSoft\CustomerTags\Ui\DataProvider\Customer\CustomerTagsFilter</item> 
+            </argument> 
+        </arguments>
+    </type>
+</config>

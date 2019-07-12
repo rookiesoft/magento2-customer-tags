@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="RookieSoft_CustomerTags::tags"
+            title="Client Tags"
+            translate="title"
+            module="RookieSoft_CustomerTags"
+            parent="Magento_Customer::customer"
+            sortOrder="50"
+            dependsOnModule="RookieSoft_CustomerTags"
+            resource="RookieSoft_CustomerTags::tags"/>
+        <add id="RookieSoft_CustomerTags::guest_customer"
+            title="Guest customer"
+            translate="title"
+            module="RookieSoft_CustomerTags"
+            parent="RookieSoft_CustomerTags::tags"
+            sortOrder="10"
+            dependsOnModule="RookieSoft_CustomerTags"
+            action="customertags/guestcustomer/index"
+            resource="RookieSoft_CustomerTags::tags"/>
+        <add id="RookieSoft_CustomerTags::tag"
+            title="Tags"
+            translate="title"
+            module="RookieSoft_CustomerTags"
+            parent="RookieSoft_CustomerTags::tags"
+            sortOrder="20"
+            dependsOnModule="RookieSoft_CustomerTags"
+            action="customertags/tags/index"
+            resource="RookieSoft_CustomerTags::tags"/>
+        </menu>
+</config>

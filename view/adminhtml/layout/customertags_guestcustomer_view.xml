@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>
+            View
+        </title>
+    </head>
+    <body>
+       <!--  <referenceContainer name="content">
+            <block
+                class="Magento\Backend\Block\Template"
+                name="tags_guestcustomer_view"
+                template="rookiesoft_customertags::View.phtml"
+            />
+        </referenceContainer> -->
+        <referenceContainer name="content">
+            <block
+                class="RookieSoft\CustomerTags\Block\Adminhtml\GuestCustomer\View"
+                name="customertags_guestcustomer_view"
+                template="RookieSoft_CustomerTags::view.phtml"
+            />
+            <uiComponent name="rookiesoft_customertags_guestcustomer_form"/>
+            <uiComponent name="rookiesoft_customertags_guestcustomer_view" />
+
+        </referenceContainer>
+    </body>
+</page>

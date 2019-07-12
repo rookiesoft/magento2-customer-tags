@@ -1,0 +1,29 @@
+.rookiesoft__page-section-title{
+    &:extend(.abs-clearfix all);
+    border-bottom: 1px solid @color-gray80;
+    margin-bottom: 1.7rem;
+    padding: 1.4rem 0 1.6rem;
+    strong,
+    .title {
+        &:extend(h2);
+        float: left;
+        margin: 0;
+    }
+}
+
+.rookiesoft_page-section {
+	margin-bottom: 5rem;
+}
+
+.media-width(@extremum, @break) when (@extremum = 'min') and (@break = @screen__m) { 
+
+	.rookiesoft-information {
+        float: left;
+        #mix-grid .width(6,12);
+    }
+
+	.rookiesoft-view-account-information .rookiesoft-account-information{
+	        float: right;
+	        #mix-grid .width(6,12);
+	}
+}
