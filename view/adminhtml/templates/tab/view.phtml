@@ -59,3 +59,13 @@
         </div>
     </div>
 </section>
+<script type="text/javascript">
+    jQuery('[data-index="sales_order_columns"]').show();
+    jQuery('body').on('focusin', '.admin__page-nav-link', function() {
+        if (jQuery(this).attr('id') == 'tab_block_customer_edit_tab_CustomerTags') {
+            jQuery('[data-index="sales_order_columns"]').show();
+        } else {
+            jQuery('[data-index="sales_order_columns"]').hide();
+        }
+    });
+</script>
