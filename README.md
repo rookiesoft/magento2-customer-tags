@@ -3,15 +3,26 @@ Customer Tags is a user-friendly solution to easly manage Tags for Customers and
 With Customer Tags you can create youre own tags and add them to your customers as you wish. 
 
 We have added a grid to add tags under Customer->Client Tags->Tags
-## You can create or edit or delete Tags like this
-                            
-![Rookiesoft Customer Tags](https://i.ibb.co/K7XLcqB/Add-tag-view.png)
+## Add tags
+On the top rigt corner is a red button [Add Tag] wich leads to an formular. 
+After everything is filled on the top left corner is the [Save] button. 
+You also can use the [Back] button if you dont want to add a new tag.
+### Delete tags
+To delete an Tag simply click on the checkbox next to the tag that is not wanted and click on the dropdown menu above called [Actions]
+and select [Delete], you get asked if you realy wish to delte the tag and it is done.
+<!-- ![Rookiesoft Customer Tags](https://i.ibb.co/K7XLcqB/Add-tag-view.png) -->
 
 For guests we have added a new grid found under Customer->Client Tags->GuestCustomer
-## You can add Tags to guests like this
-We also added a link to sales order detail view <!-- think of an better sentance later -->
+## Guest customer grid
+If you want to add your newly created, or existing tags to guests (later to registered customers too) press the
+view (edit) button in the row of the customer you wish too add them.
+On this side a few informations of that customer is provided just as they're email adress, pruchases made, total sales and every order id if that customer has made multiple purchases.
+You can press on the [View] button to get to order view for more informations regarding the order.
+### Add tags to customer
+Under the title [Edit Guest Customer Tags] is an select form with search function you can select multiple tags for an customer.
+<!-- We also added a link to sales order detail view --> <!-- think of an better sentance later -->
 
-![Rookiesoft Customer Tags](https://i.ibb.co/x5kXmVN/Guest-customer-view.png)
+<!-- ![Rookiesoft Customer Tags](https://i.ibb.co/x5kXmVN/Guest-customer-view.png) -->
 
 ### What's next
 * Adding tags to registered customers
