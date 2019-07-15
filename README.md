@@ -16,6 +16,7 @@ We also added a link to sales order detail view <!-- think of an better sentance
 ### What's next
 * Adding tags to registered customers
   * with an tab in Customers->All Customer->edit
+* Filter for Tags
 
 ### Features
 * Quick and easy setup
@@ -43,4 +44,8 @@ cd to {Magento 2 root}
     bin/magento setup:upgrade
 ```
 
+<<<<<<< HEAD
 Now you are ready to use the module.
+=======
+Now you are ready to use the module.
+
