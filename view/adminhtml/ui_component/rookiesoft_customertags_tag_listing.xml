@@ -109,7 +109,7 @@
                </item>
            </argument>
        </selectionsColumn>
-        <column name="id">
+<!--         <column name="id">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="filter" xsi:type="string">text</item>
@@ -117,7 +117,7 @@
                     <item name="label" xsi:type="string" translate="true">Tag Id</item>
                 </item>
             </argument>
-        </column>
+        </column> -->
         <column name="code">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">

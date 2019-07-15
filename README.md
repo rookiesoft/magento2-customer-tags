@@ -43,4 +43,4 @@ cd to {Magento 2 root}
     bin/magento setup:upgrade
 ```
 
-Now you are ready to use the module
+Now you are ready to use the module.
