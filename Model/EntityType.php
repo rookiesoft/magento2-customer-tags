@@ -39,7 +39,7 @@ class EntityType extends AbstractModel implements EntityTypeInterface, IdentityI
 
     /**
      * Get Code
-     * 
+     *
      * @return string|null
      */
     public function getCode()
@@ -49,12 +49,22 @@ class EntityType extends AbstractModel implements EntityTypeInterface, IdentityI
 
     /**
      * Get Type Name
-     * 
+     *
      * @return string|null
      */
     public function getTypeName()
     {
         return $this->getData(self::TYPE_NAME);
+    }
+
+    /**
+     * Get Reference
+     *
+     * @return string|null
+     */
+    public function getReference()
+    {
+        return $this->getData(self::REFERENCE);
     }
 
     /**
@@ -97,5 +107,16 @@ class EntityType extends AbstractModel implements EntityTypeInterface, IdentityI
     public function setTypeName($typeName)
     {
         return $this->setData(self::TYPE_NAME, $typeName);
+    }
+
+    /**
+     * Set Reference
+     *
+     * @param string $reference
+     * @return $this
+     */
+    public function setReference($reference)
+    {
+        return $this->setData(self::REFERENCE, $reference);
     }
 }

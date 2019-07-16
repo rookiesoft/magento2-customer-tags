@@ -39,7 +39,7 @@ class EntityTag extends AbstractModel implements EntityTagInterface, IdentityInt
 
     /**
      * Get Entity Id
-     * 
+     *
      * @return int|null
      */
     public function getEntityId()
@@ -49,7 +49,7 @@ class EntityTag extends AbstractModel implements EntityTagInterface, IdentityInt
 
     /**
      * Get Entity Type Id
-     * 
+     *
      * @return int|null
      */
     public function getEntityTypeId()
@@ -59,7 +59,7 @@ class EntityTag extends AbstractModel implements EntityTagInterface, IdentityInt
 
     /**
      * Get Tag Code
-     * 
+     *
      * @return string|null
      */
     public function getTagCode()
@@ -117,6 +117,6 @@ class EntityTag extends AbstractModel implements EntityTagInterface, IdentityInt
      */
     public function setTag_Code($tagCode)
     {
-        return $this->setData(self::TAG_CODE, $entityTypeId);
+        return $this->setData(self::TAG_CODE, $tagCode);
     }
 }

@@ -10,6 +10,7 @@ interface EntityTypeInterface
     const ID                        = 'id';
     const CODE                      = 'code';
     const TYPE_NAME                 = 'type_name';
+    const REFERENCE                 = 'reference';
 
     /**
      * Get ID
@@ -31,6 +32,13 @@ interface EntityTypeInterface
      * @return string|null
      */
     public function getTypeName();
+
+    /**
+     * Get Reference
+     *
+     * @return string|null
+     */
+    public function getReference();
 
     /**
      * Set ID
@@ -56,4 +64,11 @@ interface EntityTypeInterface
      */
     public function setTypeName($typeName);
 
+    /**
+     * Set Reference
+     *
+     * @param string $Type_Name
+     * @return $this
+     */
+    public function setReference($reference);
 }

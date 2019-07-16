@@ -3,6 +3,7 @@
 namespace RookieSoft\CustomerTags\Model;
 
 use Magento\Sales\Model\ResourceModel\Order\CollectionFactory;
+use Magento\Customer\Model\ResourceModel\Customer\CollectionFactory as CustomerCollectionFactory;
 use Magento\Ui\DataProvider\AbstractDataProvider;
 use Magento\Framework\App\ResourceConnection;
 use RookieSoft\CustomerTags\Model\ResourceModel\GuestCustomer\CollectionFactory as GuestCustomerCollectionFactory;
@@ -18,12 +19,14 @@ class GuestCustomerForm extends AbstractDataProvider
         $requestFieldName,
         ResourceConnection $resource,
         CollectionFactory $salesOrderCollectionFactory,
+        CustomerCollectionFactory $customerCollectionFactory,
         GuestCustomerCollectionFactory $guestCustomerCollectionFactory,
         TagCollectionFactory $tagCollectionFactory,
         array $meta = [],
         array $data = []
     ) {
         $this->collection = $salesOrderCollectionFactory->create();
+        $this->customerCollectionFactory = $customerCollectionFactory->create();
         $this->guestCustomerCollectionFactory = $guestCustomerCollectionFactory;
         $this->tagCollectionFactory = $tagCollectionFactory;
         parent::__construct($name, $primaryFieldName, $requestFieldName, $meta, $data);
@@ -35,15 +38,17 @@ class GuestCustomerForm extends AbstractDataProvider
             return $this->_loadedData;
         }
         $items = $this->collection->getItems();
+        $customeritems = $this->customerCollectionFactory->getItems();
 
-        foreach ($items as $email) {
+        foreach ($customeritems as $email) {
             //$result['customer_email']  = $email->getData();
 
             //get all tags for mail address, typecast to STRING into Array
             $tagCodes = $this->guestCustomerCollectionFactory
                 ->create()
                 ->addFieldToFilter(
-                    'email',$email->getCustomerEmail()
+                    'email',$email->getEmail()
+                    // 'email',$email->getCustomerEmail()
                 );
             $tagId = [];
             foreach($tagCodes->getItems() as $data){
