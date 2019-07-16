@@ -1,0 +1,27 @@
+<?php
+
+namespace RookieSoft\CustomerTags\Setup;
+
+use Magento\Framework\Setup\InstallDataInterface;
+use Magento\Framework\Setup\ModuleContextInterface;
+use Magento\Framework\Setup\ModuleDataSetupInterface;
+
+/**
+ * @codeCoverageIgnore
+ */
+class InstallData implements InstallDataInterface
+{
+
+    public function install(ModuleDataSetupInterface $setup, ModuleContextInterface $context)
+    {
+
+        $data = [
+            ['code' => 'guest', 'type_name' => 'Guests', 'reference' => 'rookiesoft_customertags_guest_customer'],
+            ['code' => 'customer', 'type_name' => 'Customer', 'reference' => 'customer_entity']
+        ];
+        foreach ($data as $bind) {
+            $setup->getConnection()
+                ->insertForce($setup->getTable('rookiesoft_customertags_entity_type'), $bind);
+        }
+    }
+}
