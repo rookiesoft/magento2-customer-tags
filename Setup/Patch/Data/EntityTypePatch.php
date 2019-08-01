@@ -12,12 +12,12 @@ class EntityTypePatch implements DataPatchInterface
         EntityTypeFactory $entityTypeFactory
     ) {
         $this->moduleDataSetup   = $moduleDataSetup;
-        $this->entityTypeFactory = $entityTypeFactory;  
+        $this->entityTypeFactory = $entityTypeFactory;
     }
 
     /**
      * apply
-     * @return void patch to set defaults for rookiesoft_customertags_guest_customer;
+     * set defaults for rookiesoft_customertags_guest_customer;
      */
     public function apply()
     {

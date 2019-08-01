@@ -38,6 +38,9 @@ class Save extends \Magento\Backend\App\Action
     {
         $data = $this->getRequest()->getPostValue();
         // var_dump($data);
+            // echo "<pre>";
+            // echo print_r($data, true);
+            // exit;
 
         if (!$data) {
             $this->_redirect('customertags/guestcustomer/addrow');
@@ -46,14 +49,17 @@ class Save extends \Magento\Backend\App\Action
         try {
             // $rowData = $this->modelGuestCustomerFactroy->create();
 			$rowData = $this->modelGuestCustomerFactory->create();
-           	$rowData->setData($data);
-           	// echo "<pre>";
-           	// echo print_r($data, true);
-           	// exit;
+            $rowData->setData($data);
+            //$rowData->setData($data);
+           	// $rowData->setData([
+            //     'email' => $data['customer_email']
+            // ]);
            	if(isset($data['entity_id'])) {
            		$rowData->setId($data['entity_id']);
            	}
+
            	$rowData->save();
+
 
     		$this->messageManager->addSuccess(__('Row data has been successfully saved.'));
         } catch (\Exception $e) {

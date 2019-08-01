@@ -37,7 +37,7 @@
                 <item name="sortOrder" xsi:type="number">20</item>
             </item>
         </argument>
-       <!--  <field name="customer_email">
+        <field name="customer_email">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="dataType" xsi:type="string">text</item>
@@ -48,7 +48,7 @@
                     <item name="dataScope" xsi:type="string">customer_email</item>
                 </item>
             </argument>
-        </field> -->
+        </field>
         <field name="tagToCustomer" component="RookieSoft_CustomerTags/js/components/select-tagToCustomer" sortOrder="20" formElement="select">
             <argument name="data" xsi:type="array">
                 <item name="options" xsi:type="object">RookieSoft\CustomerTags\Model\ResourceModel\Tag\Collection</item>

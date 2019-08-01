@@ -26,7 +26,7 @@ class GuestCustomerForm extends AbstractDataProvider
         array $data = []
     ) {
         $this->collection = $salesOrderCollectionFactory->create();
-        $this->customerCollectionFactory = $customerCollectionFactory->create();
+        $this->customerCollectionFactory = $salesOrderCollectionFactory->create();
         $this->guestCustomerCollectionFactory = $guestCustomerCollectionFactory;
         $this->tagCollectionFactory = $tagCollectionFactory;
         parent::__construct($name, $primaryFieldName, $requestFieldName, $meta, $data);
