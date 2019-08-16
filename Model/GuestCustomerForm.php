@@ -1,5 +1,9 @@
 <?php
-
+/**
+ * @todo get id from sales order load email compare email with guest customer get 
+ * entity id compare with entity id and customer is guest from entity tag and load 
+ * tag code compare with tags and setData for preload
+ */
 namespace RookieSoft\CustomerTags\Model;
 
 use Magento\Sales\Model\ResourceModel\Order\CollectionFactory;
@@ -12,7 +16,6 @@ use RookieSoft\CustomerTags\Model\ResourceModel\Tag\CollectionFactory as TagColl
 class GuestCustomerForm extends AbstractDataProvider
 {
     protected $_loadedData;
-
     public function __construct(
         $name,
         $primaryFieldName,
@@ -31,7 +34,6 @@ class GuestCustomerForm extends AbstractDataProvider
         $this->tagCollectionFactory = $tagCollectionFactory;
         parent::__construct($name, $primaryFieldName, $requestFieldName, $meta, $data);
     }
-
     public function getData()
     {
         if (isset($this->_loadedData)) {
@@ -39,10 +41,8 @@ class GuestCustomerForm extends AbstractDataProvider
         }
         $items = $this->collection->getItems();
         $customeritems = $this->customerCollectionFactory->getItems();
-
         foreach ($customeritems as $email) {
             //$result['customer_email']  = $email->getData();
-
             //get all tags for mail address, typecast to STRING into Array
             $tagCodes = $this->guestCustomerCollectionFactory
                 ->create()
@@ -51,19 +51,32 @@ class GuestCustomerForm extends AbstractDataProvider
                     // 'email',$email->getCustomerEmail()
                 );
             $tagId = [];
+            // echo "<pre>";
+            // echo print_r($tagCodes->toArray(), true);
+            // exit;
             foreach($tagCodes->getItems() as $data){
                 $tagIds = $this->tagCollectionFactory
                 ->create()
                 ->addFieldToFilter(
                     'code' , $data->getTagCode()
                 );
+                
+	            // error_log(print_r($tagIds, true));
                 foreach($tagIds->getItems() as $items){
                     $tagId[] = $items->getId();
-                }
-            }
-            $email->setTag($tagId);
-            $this->_loadedData[$email->getId()] = $email->getData();
 
+                    
+                }
+                // echo "<pre>";
+                
+                // exit;
+            }
+            
+            $email->setTag($tagId);
+            // echo "<pre>";
+            // echo print_r($email->getData(), true);
+            // exit;
+            $this->_loadedData[$email->getId()] = $email->getData();
         }
         // echo "<pre>";
         // echo print_r($this->_loadedData);
